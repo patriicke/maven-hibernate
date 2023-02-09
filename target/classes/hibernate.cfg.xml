@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>-->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/maven</property>
+        <property name="hibernate.connection.username">patriicke</property>
+        <property name="hibernate.connection.password">DATAbase@123</property>
+
+
+        <property name="hibernate.session_factory_name">SchoolSessionFactory</property>
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheRegionFactoryAvailableException</property>  <!--  hibernate.cache.NoCacheProvider-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!--<property name="hibernate.default_schema">school</property>-->
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.use_sql_comments">false</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="lazy">false</property>
+
+        <property name="hibernate.c3p0.min_size">10</property>
+        <property name="hibernate.c3p0.max_size">100</property>
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <property name="hibernate.c3p0.max_statements">1</property>
+        <property name="hibernate.c3p0.timeout">1800</property>
+        <!--<property name="hbm2ddl.auto">hibernate.hbm2ddl.auto</property>-->
+
+        <!-- Models -->
+        <mapping class="rca.ac.rw.orm.Customer"></mapping>
+        <mapping class="rca.ac.rw.orm.Like"></mapping>
+        <!--<mapping class="rca.ac.rw.orm.Message"></mapping>-->
+        <!--<mapping class="rca.ac.rw.orm.Notification"></mapping>-->
+        <!--<mapping class="rca.ac.rw.orm.Post"></mapping>-->
+        <!--<mapping class="rca.ac.rw.orm.Comment"></mapping>-->
+
+    </session-factory>
+</hibernate-configuration>
